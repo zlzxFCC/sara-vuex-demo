@@ -1,5 +1,5 @@
 <template>
-    <div class='head'>
+    <div class='head' @click='setColor' :style='{"background":color}'>
         <router-link to='/'><img src='../assets/cnodejs.svg' title='cnodejs.svg'>
         </router-link>
         <el-button type='text' @click='dialogVisible=true'>关于</el-button>
@@ -28,8 +28,17 @@
         data() {
             return {
                 dialogVisible: false,
+                color:this.$store.state.theme.bgcolor
             };
         },
+        methods:{
+          setColor(){
+            let color
+            this.color=='#00d1b2'?color='#324057':color='#00d1b2'
+            this.$store.dispatch('getBgColor',color)
+            this.color=this.$store.state.theme.bgcolor
+          }
+        }
     };
 </script>
 
@@ -43,13 +52,13 @@
         top: 0;
         left: 0;
     }
-    
+
     .head img {
         width: 10rem;
         height: 3.5rem;
         margin-left: 10rem;
     }
-    
+
     .head>button {
         display: inline-block;
         float: right;
@@ -61,20 +70,20 @@
         letter-spacing: 2px;
         padding-top: 0.2rem;
     }
-    
+
     .head .dialogDiv {
         font-size: 17px;
     }
-    
+
     .head ul {
         margin-left: 1rem;
     }
-    
+
     .head a {
         text-decoration: none;
         color: #58B7FF;
     }
-    
+
     .head .star {
         font-weight: bold;
         color: #1D8CE0;
