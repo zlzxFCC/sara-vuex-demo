@@ -1,5 +1,7 @@
 # VueCnodejs
 
+vuexVersion文件夹下 运行 cnpm i 然后 npm run dev,vuex全局管理状态，接口请求数据和更换主题背景bgcolor的值
+
 > 一个Vue的**初/中级**练手项目：重构CnodeJS社区
 
 [**预览**](https://shuirong.github.io/vcnode/index.html#/)
@@ -80,7 +82,7 @@ so sweet? :)
 
 [CnodeJS API](https://cnodejs.org/api)
 
-### Install And Run 
+### Install And Run
 
 ---
 
@@ -99,4 +101,3 @@ npm run build --report
 ```
 
 **PS:** port 8080 will be used.
-
